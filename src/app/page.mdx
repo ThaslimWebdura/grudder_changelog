@@ -4,56 +4,55 @@ export { Layout as default } from '@/components/Layout'
 
 ---
 
-![](@/images/commit-suggestions.png)
+## Version 0.7.0 - Enhanced Export & Integrations {{ date: '2025-07-30T00:00Z' }}
 
-## Commit message suggestions {{ date: '2023-04-06T00:00Z' }}
+Focused on bulk export, lead details improvements, and key platform integrations.
 
-In the latest release, I've added support for commit message and description suggestions via an integration with OpenAI. Commit looks at all of your changes, and feeds that into the machine with a bit of prompt-tuning to get back a commit message that does a surprisingly good job at describing the intent of your changes.
+<Screenshot 
+	src="https://ik.imagekit.io/grudder/download_0.7.0.png?updatedAt=1752830207736" 
+	alt="Bulk download interface with Excel export and progress tracking"
+	caption="New bulk download system with Excel export capabilities, supporting up to 1000 leads with real-time progress tracking"
+/>
 
-It's also been a pretty helpful way to remind myself what the hell I was working on at the end of the day yesterday when I get back to my computer and realize I didn't commit any of my work.
+### <SparkleIcon /> Features
 
-### <SparkleIcon /> Improvements
-
-- Added commit message and description suggestions powered by OpenAI
-- Fixed race condition that could sometimes leave you in a broken rebase state
-- Improved active project detection to try and ignore file changes triggered by the system instead of the user
-- Fixed bug that sometimes reported the wrong number of changed files
-
----
-
-![](@/images/configuration-files.png)
-
-## Project configuration files {{ date: '2023-03-17T00:00Z' }}
-
-I've added support for creating per-project `.commitrc` files that override your global settings for that particular project. Went with YAML for these because personally I'm sick of quoting keys in JSON all the time, or accidentally leaving in a trailing comma.
+- **Bulk export to Excel/CSV (up to 1000 leads) with live progress tracking**
+- **Column selection for exports**
+- **Meta and Google lead intergration setup**
+- **Redesigned lead detail view for better navigation**
 
 ### <SparkleIcon /> Improvements
 
-- Added per-project `.commitrc` configuration files
-- Improved performance when working with projects with large binary files
-- Fixed a bug that could cause Commit to crash when autocommitting after deleting a recently active branch
+- **Notification center redesign with filtering by type/date/status**
+- **Better contact management and activity tracking in lead profile**
+
+<Screenshot 
+	src="https://ik.imagekit.io/grudder/lead_details_0.7.0.png?updatedAt=1752830207736" 
+	alt="Redesigned lead details page with improved layout and navigation"
+	caption="Completely redesigned lead details page featuring improved information architecture and user-friendly navigation"
+/>
+
+### <SparkleIcon /> Integrations
+
+- **Meta lead import and campaign tracking**
+- **Google sync for better lead capture**
+- **CRM API enhancements**
+
+<Screenshot 
+	src="https://ik.imagekit.io/grudder/integration_0.7.0.png?updatedAt=1752830207613" 
+	alt="Integration management interface showing Meta and Google connections"
+	caption="New integration management system with support for Meta and Google platforms, featuring easy setup and configuration"
+/>
 
 ---
 
-![](@/images/dark-mode.png)
+## Version 0.6.0 - Initial Release {{ date: '2025-06-01T00:00Z' }}
 
-## Dark mode support {{ date: '2023-03-06T00:00Z' }}
+First major release of our lead management platform.
 
-I released this thing last week hoping a couple of people would say "awesome job" and make me feel good about what I'd built but instead I just got a ton of people shaming me on X for being such a horrible person for only shipping a light UI.
+### <SparkleIcon /> Features
 
-### <SparkleIcon /> Improvements
-
-- Added dark mode support
-- Improved input field responsiveness when writing a commit message in a project with a large number of changed files
-- Made keyboard shortcut for opening the Commit window customizable
-- Deleted my X account
-
----
-
-![](@/images/first-release.png)
-
-## Commit v0.1.0 {{  date: '2023-03-03T00:00Z' }}
-
-Commit is a command palette-style Git client you can pull up from anywhere with a keyboard shortcut that makes it really easy to commit your work. It uses the "last modified" timestamp of the files in all of your projects to automatically know which project you're in the middle of working on, so any time you pull up the UI it's already got the right project selected — you just have to type your commit message, hit <kbd>Cmd</kbd> + <kbd>Enter</kbd> and your changes are captured.
-
-I'd be lying if I really thought this was that useful but I was looking for an excuse to learn macOS development and here we are. It's open source at least so maybe you can find something interesting in the code even if the app itself is a total waste of hard drive space.
+- **Lead add/edit with drawer interface**
+- **Bulk lead reassign**
+- **Advanced filtering & smart Search**
+- **Real-time updates & permissions**

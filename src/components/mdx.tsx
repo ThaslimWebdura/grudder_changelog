@@ -24,6 +24,29 @@ export const img = function Img(props: ImagePropsWithOptionalAlt) {
   )
 }
 
+type ScreenshotProps = {
+  src: string
+  alt?: string
+  caption?: string
+}
+
+export function Screenshot({ src, alt = '', caption }: ScreenshotProps) {
+  return (
+    <figure className="space-y-3">
+      <div className="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-900">
+        {/* Use a plain img tag to avoid Next/Image remote config requirements */}
+        <img src={src} alt={alt} className="w-full h-auto" />
+        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
+      </div>
+      {caption ? (
+        <figcaption className="text-center text-sm text-gray-500 dark:text-gray-400">
+          {caption}
+        </figcaption>
+      ) : null}
+    </figure>
+  )
+}
+
 function ContentWrapper({
   className,
   ...props
